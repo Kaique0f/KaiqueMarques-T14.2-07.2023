@@ -1,6 +1,6 @@
 import pygame
 
-from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
+from dino_runner.utils.constants import CLOUD, BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
 from dino_runner.components.dinosaur import Dinosaur
 
 class Game:
@@ -14,7 +14,7 @@ class Game:
         self.player = Dinosaur()
         
         self.playing = False
-        self.game_speed = 20
+        self.game_speed = 10
         self.x_pos_bg = 0
         self.y_pos_bg = 380
 
@@ -50,6 +50,23 @@ class Game:
         image_width = BG.get_width()
         self.screen.blit(BG, (self.x_pos_bg, self.y_pos_bg))
         self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
+
+        self.screen.blit(CLOUD, (5, 100))
+        self.screen.blit(CLOUD, (30, 150))
+        self.screen.blit(CLOUD, (120, 150))
+        self.screen.blit(CLOUD, (140, 120))
+        self.screen.blit(CLOUD, (400, 120))
+        self.screen.blit(CLOUD, (430, 150))
+        self.screen.blit(CLOUD, (500, 100))
+        self.screen.blit(CLOUD, (545, 150))
+        self.screen.blit(CLOUD, (810, 110))
+        self.screen.blit(CLOUD, (850, 140))
+        self.screen.blit(CLOUD, (910, 90))
+        self.screen.blit(CLOUD, (970, 150))
+        
+        
+
+
         if self.x_pos_bg <= -image_width:
             self.screen.blit(BG, (image_width + self.x_pos_bg, self.y_pos_bg))
             self.x_pos_bg = 0
