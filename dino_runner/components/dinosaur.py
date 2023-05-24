@@ -5,6 +5,7 @@ from dino_runner.utils.constants import RUNNING, JUMPING, DUCKING
 Y_POS = 310
 Y_POS_DUCK = 340
 JUMP_VEL = 8.5
+SCREEN_WIDTH = 1070
 
 class Dinosaur:
     def __init__(self):
@@ -65,6 +66,12 @@ class Dinosaur:
             self.dino_rect_y = Y_POS
             self.dino_jump = False
             self.jump_vel = JUMP_VEL
+    
+    def move_right(self):
+        self.dino_rect.x += 5
+    
+    def move_left(self):
+        self.dino_rect.x -= 5
     
     def draw(self, screen):
         screen.blit(self.image,(self.dino_rect.x, self.dino_rect.y))
